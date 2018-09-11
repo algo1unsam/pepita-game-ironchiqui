@@ -23,13 +23,13 @@ object pepita {
 			}
 				else
 					{
-					game.say " Dame de comer primero!"
+					game.say( "Dame de comer primero!")
 					}
 			
 		
 		else
 			{
-			game.say "Ya estoy en <unaCiudad>"
+			game.say (visual,"Ya estoy en <unaCiudad>")
 			
 		}
 		}
