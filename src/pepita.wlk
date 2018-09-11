@@ -1,5 +1,6 @@
 import ciudades.*
 
+
 object pepita {
 	var property energia = 100
 	var property ciudad = buenosAires 
@@ -12,11 +13,26 @@ object pepita {
 	}
 	
 	method volaHacia(unaCiudad) {
-		if (ciudad != unaCiudad) {
-			self.move(unaCiudad.posicion())
-			ciudad = unaCiudad
+		
+		if (ciudad != unaCiudad)
+			{ 
+			if (self.energia()>= self.energiaParaVolar())
+			{
+				self.move(unaCiudad.posicion())
+				ciudad = unaCiudad
+			}
+				else
+					{
+					game.say " Dame de comer primero!"
+					}
+			
+		
+		else
+			{
+			game.say "Ya estoy en <unaCiudad>"
+			
 		}
-	}
+		}
 
 	method energiaParaVolar(distancia) = 15 + 5 * distancia
 
